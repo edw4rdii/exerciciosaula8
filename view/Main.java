@@ -10,16 +10,12 @@ public class Main {
     public static void main(String[] args) {
         GerenciadorAnimais gerenciador = new GerenciadorAnimais();
 
-        Animal a1 = new Animal(101, "Thor", "Canina", "Labrador", LocalDate.of(2019, 3, 15), "Ana Souza");
-        Animal a2 = new Animal(102, "Mimi", "Felina", "Persa", LocalDate.of(2020, 7, 10), "Carlos Silva");
-        Animal a3 = new Animal(103, "Bob", "Canina", "Bulldog", LocalDate.of(2018, 11, 25), "Paula Lima");
+        gerenciador.adicionarAnimal(new Animal(101, "Thor", "Canina", "Labrador", LocalDate.of(2019, 3, 15), "Ana Souza"));
+        gerenciador.adicionarAnimal(new Animal(102, "Mimi", "Felina", "Persa", LocalDate.of(2020, 7, 10), "Carlos Silva"));
+        gerenciador.adicionarAnimal(new Animal(103, "Bob", "Canina", "Bulldog", LocalDate.of(2018, 11, 25), "Paula Lima"));
 
-        gerenciador.adicionarAnimal(a1);
-        gerenciador.adicionarAnimal(a2);
-        gerenciador.adicionarAnimal(a3);
-
-        Animal duplicado = new Animal(101, "Thor", "Canina", "Labrador", LocalDate.of(2019, 3, 15), "Ana Souza");
-        gerenciador.adicionarAnimal(duplicado);
+        // duplicado
+        gerenciador.adicionarAnimal(new Animal(101, "Thor", "Canina", "Labrador", LocalDate.of(2019, 3, 15), "Ana Souza"));
 
         System.out.println("\nLista de todos os animais cadastrados:");
         for (Animal a : gerenciador.listarTodos()) {
